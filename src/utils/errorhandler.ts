@@ -1,8 +1,7 @@
-import { error } from "console";
-import { globalResponse } from "../response/globalResponse.js";
-
-export const asyncHandler = (fn: any) => {
-  return fn((req: any, res: any, err: any) => {
-    fn(req, res, err);
-  }).catch((error: any) => err(error));
+export const errorHandler = (err: any) => {
+  return {
+    statusCode: err.statusCode || 500,
+    message: err.message || "Internal Server Error",
+    data: null,
+  };
 };

@@ -1,5 +1,9 @@
 import express from "express";
-import { getAllUsers, getUserById } from "../contollers/userControllers.js";
+import {
+  getAllUsers,
+  getUserById,
+  createUser,
+} from "../contollers/userControllers.js";
 
 const router = express.Router();
 
@@ -10,7 +14,7 @@ router.get("/", getAllUsers);
 router.get("/:id", getUserById);
 
 // //CREATE USERS CONTROLLER
-router.post("/", createUsers);
+router.post("/", createUser);
 
 // //UPDATE USERS COTROLLER
 // router.put("/:id", updateUsers);
