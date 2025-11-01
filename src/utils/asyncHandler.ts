@@ -10,3 +10,16 @@ export const asyncHandler = (fn: Function) => {
     }
   };
 };
+
+//ANOTHER WAY OF WRITING ASYNCHANDLER
+
+// export const asyncHandler = (
+//   fn: (req: any, res: any, next: any) => Promise<void>
+// ) => {
+//   return (req: any, res: any, next: any) => {
+//     Promise.resolve(fn(req, res, next)).catch((error) => {
+//       console.log("Error caught by asynchandler", error);
+//       res.status(500).json(globalResponse(null, 200, error.message));
+//     });
+//   };
+// };
